@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JinDing Photography</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-name">JinDing</a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link active">作品</a>
+        <a href="about.html" class="nav-link">关于</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <nav id="theme-nav" class="theme-nav" aria-label="主题筛选">
+      <button class="theme-btn active" data-theme="all">全部</button>
+    </nav>
+
+    <section id="gallery" class="photo-grid" aria-label="照片画廊"></section>
+
+    <div id="loading" class="loading-spinner" aria-label="加载中"></div>
+
+    <div id="empty-state" class="empty-state" hidden>
+      <i class="fa-solid fa-camera-retro empty-icon"></i>
+      <p>暂无照片</p>
+    </div>
+
+    <div id="error-state" class="error-state" hidden>
+      <i class="fa-solid fa-triangle-exclamation error-icon"></i>
+      <p>加载失败</p>
+      <button id="retry-btn" class="retry-btn">重新加载</button>
+    </div>
+  </main>
+
+  <div id="lightbox" class="lightbox" hidden aria-hidden="true">
+    <button class="lb-close" id="lb-close" aria-label="关闭">&times;</button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="上一张">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="lb-nav lb-next" id="lb-next" aria-label="下一张">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="lb-content">
+      <img class="lb-img" id="lb-img" src="" alt="">
+      <div class="lb-counter" id="lb-counter">1 / 10</div>
+      <div class="lb-details" id="lb-details">
+        <h3 class="lb-title" id="lb-title"></h3>
+        <div class="lb-detail-row">
+          <div class="photo-detail-item">
+            <span class="detail-label">日期</span>
+            <span class="detail-value" id="detail-date">—</span>
+          </div>
+          <div class="photo-detail-item">
+            <span class="detail-label">相机</span>
+            <span class="detail-value" id="detail-camera">—</span>
+          </div>
+          <div class="photo-detail-item">
+            <span class="detail-label">镜头</span>
+            <span class="detail-value" id="detail-lens">—</span>
+          </div>
+          <div class="photo-detail-item">
+            <span class="detail-label">光圈</span>
+            <span class="detail-value" id="detail-aperture">—</span>
+          </div>
+          <div class="photo-detail-item">
+            <span class="detail-label">快门</span>
+            <span class="detail-value" id="detail-shutter">—</span>
+          </div>
+          <div class="photo-detail-item">
+            <span class="detail-label">ISO</span>
+            <span class="detail-value" id="detail-iso">—</span>
+          </div>
+        </div>
+        <p class="lb-description" id="lb-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 JinDing. All rights reserved.</p>
+  </footer>
+</body>
+</html>
